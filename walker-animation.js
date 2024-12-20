@@ -1,26 +1,39 @@
-        const spriteSheet = new Image();
-        spriteSheet.src = "spritesheet-walker.png";
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const width = canvas.width = 320;
+const height = canvas.height = 480;
+const frameWidth = 600;
+const frameHeight = 1080;
+const xPos = 130;
+const yPos = 160;
+const scale = 1;
+const fps = 60;
+const secondsToUpdate = 1 * fps;
+const count = 0;
 
-        spriteSheet.onLoad = function() {
-                init();
-        }
 
-        const frameWidth = 35;
-        const frameHeight = 75;
-        const frameCount = 10;
-        let currentFrame = 0;
+canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
-        function drawFrame(frameX, frameY, canvasX, canvasY) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(spriteSheet, frameX * frameWidth, frameY * frameHeight, frameWidth, frameHeight, canvasX, canvasY, frameWidth, frameHeight);
-        }
+const spriteSheet = new Image();
+spriteSheet.src = "spritesheet-walker.png";
 
-        function animateFrames() {
-        drawFrame(currentFrame, 0, 0, 0);
-        currentFrame = (currentFrame + 1) % frameCount;
-        requestAnimationFrame(animateFrames);
-        }
+function animate() {
+        ctx.drawImage(
+                spriteSheet,
+                0,
+                0,
+                frameWidth,
+                frameHeight,
+                xPos,
+                yPos,
+                frameWidth * scale,
+                frameHeight * scale);
+}
 
-        function init() {
-        animateFrames();
-        }
+function frame() { 
+        ctx.clearRect(0, 0, width, height);
+        animate();
+        requestAnimationFrame(frame);
+}
+
+frame();
