@@ -10,6 +10,7 @@ const scale = 1;
 const fps = 60;
 const secondsToUpdate = 1 * fps;
 const count = 0;
+const frameIndex = 1;
 
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
@@ -20,7 +21,7 @@ spriteSheet.src = "spritesheet-walker.png";
 function animate() {
         ctx.drawImage(
                 spriteSheet,
-                0,
+                frameIndex * frameWidth,
                 0,
                 frameWidth,
                 frameHeight,
