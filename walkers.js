@@ -575,7 +575,6 @@
         updateWalkersTop();
         updateWalkersRight();
         player1.updatePosition();
-        drawFrame(0,0,700,200);
 
             bulletsWASD.forEach((bullet, index) => { //handles collision detection
             walkers.forEach((walker, index) => {
