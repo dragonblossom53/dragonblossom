@@ -182,7 +182,7 @@
         bullet.speed = new Vector(7, 7);
         bullet.status = 1;
         canFire = false;
-        setTimeout(allowFire, 150);
+        setTimeout(allowFire, 50);
         return bullet;
         }
 
