@@ -33,7 +33,7 @@
         let blockOffsetLeft = 100;
         let blocks = []
         let blocks2 = []
-                
+
         class Vector {
 
             constructor(x, y) {
@@ -179,7 +179,7 @@
         bullet.speed = new Vector(7, 7);
         bullet.status = 1;
         canFire = false;
-        setTimeout(allowFire, 50);
+        setTimeout(allowFire, 150);
         return bullet;
         }
 
