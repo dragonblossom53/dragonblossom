@@ -38,7 +38,11 @@
         const spriteSheet = new Image();
         spriteSheet.src = "spritesheet-walker.png";
 
-        spriteSheet.onLoad = function() {
+        function drawFrame(x, y, width, height) {
+        ctx.drawImage(spriteSheet, x, y, width, height);
+        }
+
+        /*spriteSheet.onLoad = function() {
                 init();
         }
 
@@ -60,7 +64,7 @@
 
         function init() {
         animateFrames();
-        }
+        }*/
         //end of sprite animation
                 
         class Vector {
@@ -604,6 +608,7 @@
         updateWalkersTop();
         updateWalkersRight();
         player1.updatePosition();
+        drawFrame(0,0,100,100);
 
             bulletsWASD.forEach((bullet, index) => { //handles collision detection
             walkers.forEach((walker, index) => {
