@@ -4,7 +4,7 @@ const width = canvas.width = 320;
 const height = canvas.height = 480;
 const frameWidth = 2000;
 const frameHeight = 1080;
-const xPos = 130;
+const xPos = 0;
 const yPos = 160;
 const scale = 1;
 const fps = 60;
