@@ -2,7 +2,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const width = canvas.width = 320;
 const height = canvas.height = 480;
-const frameWidth = 600;
+const frameWidth = 2000;
 const frameHeight = 1080;
 const xPos = 130;
 const yPos = 160;
