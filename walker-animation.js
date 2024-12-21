@@ -18,6 +18,26 @@ canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 const spriteSheet = new Image();
 spriteSheet.src = "spritesheet-walker.png";
 
+const State = {
+        states: {},
+        generateState: function(name, startIndex, endIndex) {
+                if(!this.states[name]) {
+                        this.states[name] = {
+                                frameIndex: startIndex,
+                                startIndex: startIndex,
+                                endIndex: endIndex,
+                        };
+                }
+        },
+        getState: function(name) {
+                if(this.states) {
+                        return this.states[name];
+                }
+        },
+};
+
+State.generateState // here is where we left off, 15:50 on vid
+
 function animate() {
         ctx.drawImage(
                 spriteSheet,
