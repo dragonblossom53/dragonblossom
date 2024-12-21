@@ -36,12 +36,12 @@ const State = {
         },
 };
 
-State.generateState // here is where we left off, 15:50 on vid
+State.generateState("walkRight", 0, 10);
 
-function animate() {
+function animate(state) {
         ctx.drawImage(
                 spriteSheet,
-                frameIndex * frameWidth,
+                state.frameIndex * frameWidth,
                 0,
                 frameWidth,
                 frameHeight,
@@ -51,17 +51,17 @@ function animate() {
                 frameHeight * scale);
         count++;
         if(count > 10) {
-        frameIndex++;
+        state.frameIndex++;
                 count = 0;
         }
-        if(frameIndex > 10) {
-        frameIndex = 0;
+        if(state.frameIndex > state.endIndex) {
+        state.frameIndex = state.startIndex;
         }
 }
 
 function frame() { 
         ctx.clearRect(0, 0, width, height);
-        animate();
+        animate(State.getState("walkRight"));
         requestAnimationFrame(frame);
 }
 
