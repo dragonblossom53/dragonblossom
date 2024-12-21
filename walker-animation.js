@@ -16,7 +16,7 @@ let frameIndex = 0;
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
 const spriteSheet = new Image();
-spriteSheet.src = "spritesheet-walker.png";
+spriteSheet.src = ![](/images/spritesheet-walker.png);
 
 const State = {
         states: {},
